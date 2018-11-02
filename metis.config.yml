@@ -1,0 +1,11 @@
+project_token: 368f1d2e5b9131f838757f6e
+name: churn-model-demo
+jobs:
+  - job_id: 3a175538-d553-4590-8a48-e72f9f348979
+    language: python
+    name: build-churn-model
+    entrypoint: "build-churn-model.py"
+  - job_id: ed631a9b-3c4f-4cf4-bb45-8ba23d253cbb
+    name: score-new-users
+    entrypoint: "score-new-users.py"
+    dependencies: 3a175538-d553-4590-8a48-e72f9f348979
